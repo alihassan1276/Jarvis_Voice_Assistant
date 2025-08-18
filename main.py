@@ -77,7 +77,7 @@ def listen_command(silent=False):
 
 # Weather API
 def get_weather(city):
-    api_key = "14bc15184646ec7cd67eb46bf47d79dc"  # Replace with your OpenWeatherMap API key
+    api_key = os.getenv("WEATHER_API_KEY")  # Replace with your OpenWeatherMap API key   , Make sure to set WEATHER_API_KEY in your environment variables or .env file
     base_url = "http://api.openweathermap.org/data/2.5/weather?"
     complete_url = f"{base_url}appid={api_key}&q={city}&units=metric"
     
